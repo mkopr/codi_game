@@ -25,6 +25,7 @@ for number in bin_str:
             encode_message = encode_message + '00' + ' ' + '0' * zeros + ' '
             zeros = 0
         ones += 1
+
 if ones != 0:
     encode_message = encode_message + '0' + ' ' + '0' * ones + ' '
 if zeros != 0:
