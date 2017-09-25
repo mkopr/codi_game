@@ -39,7 +39,7 @@ for letter in t:
     one_letter = l
     start_index = one_letter * index_in_characters - one_letter
     end_index = one_letter * index_in_characters
-    list_of_index.append(dict(start = int(start_index), end = int(end_index)))
+    list_of_index.append(dict(start=int(start_index), end=int(end_index)))
 
 for i in range(h):
     row = input()
