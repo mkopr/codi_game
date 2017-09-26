@@ -25,31 +25,21 @@ extract.cSs
 elements = 4  # Number of elements which make up the association table.
 files = 7  # Number Q of file names to be analyzed.
 
-mime_list_of_types = list()
 match = False
+mime = {}
 
-for items in range(elements):
+for item in range(elements):
     # ext: file extension
     # mt: MIME type.
     ext, mt = input().split()
-    mime_list_of_types.append({ext: mt})
+    mime[ext.lower()] = mt
 
-for items_two in range(files):
+for item in range(files):
     fname = input()  # One file name per line.
 
     if fname.find('.') != -1:
         extension = fname.split('.')[-1]
+        print(mime.get(extension.lower(), 'UNKNOWN'))
 
-        for dictonary in mime_list_of_types:
-            for key, value in dictonary.items():
-                if key.lower() == extension.lower():
-                    match = True
-                    print(value)
-
-    if match == False:
+    else:
         print('UNKNOWN')
-
-    elif match == True:
-        match = False
-
-# TODO: optimized script
